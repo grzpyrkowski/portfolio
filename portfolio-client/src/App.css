@@ -1,0 +1,150 @@
+.flex {
+  display: flex;
+}
+
+.hor-center {
+  text-align: center;
+  justify-content: center;
+}
+
+.ver-center {
+  vertical-align: middle;
+}
+
+.full-center {
+  text-align: center;
+  justify-content: center;
+  vertical-align: middle;
+}
+
+.input-text {
+  background: #d6d6d6;
+  border-radius: 5px;
+  border: 0 solid;
+  padding: 0.5em;
+}
+
+.btn-grad {
+  background-image: linear-gradient(to right, #4b4b4b 0%, #ababab 51%, #4b4b4b  100%);
+  margin: 1em;
+  padding: 0.7em 2em;
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 1.2em;
+  background-size: 200% auto;
+  color: #f2f2f2;
+  border-radius: 8px;
+  border: none;
+  font-family: Basic, serif;
+  cursor: pointer;
+}
+
+.btn-grad:hover {
+  background-image: linear-gradient(to right, #5b5b5b 0%, #bbbbbb 51%, #5b5b5b  100%);
+}
+
+.btn-grad:active {
+  background-image: linear-gradient(to right, #4b4b4b 0%, #ababab 51%, #4b4b4b  100%);
+}
+
+.btn-grad:disabled {
+  background-image: linear-gradient(to right, rgba(75, 75, 75, 0.5) 0%, rgba(171, 171, 171, 0.5) 51%, rgba(75, 75, 75, 0.5) 100%);
+  cursor: default;
+}
+
+.uppercase {
+  text-transform: uppercase;
+}
+
+.modal {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-color: rgba(0,0,0,0.5);
+  z-index: 2; /* Specify a stack order in case using a different order for other elements */
+}
+
+.form {
+  background-color: #f2f2f2;
+  color: #1f1f1f;
+  font-size: 1.3em;
+  margin: 10% 25%;
+  padding: 1% 2%;
+  border-radius: 10px;
+}
+
+.form > label {
+  margin-top: 1.6em;
+}
+
+.form > h2 {
+  text-align: center;
+}
+
+.close {
+  width: 5%;
+  float: right;
+  margin-right: 2%;
+}
+
+.form-input {
+  width: 80%;
+}
+
+.form-btn {
+  width: 40%;
+}
+
+body {
+  background-color: #1f1f1f;
+  font-family: Basic, sans-serif;
+  color: #f2f2f2;
+}
+
+.header-font {
+  font-family: NewNord, sans-serif;
+  text-transform: uppercase;
+}
+
+header, nav, main, footer {
+  border-radius: 30px;
+  border-style: solid;
+  border-width: 2px;
+  margin: 5px;
+}
+
+header {
+  font-size: 1.8em;
+}
+
+.navbar {
+  font-size: 2.5em;
+  font-weight: bold;
+  list-style: none;
+}
+
+.navbar > div {
+  width: 33.33%;
+}
+
+.nav-item {
+  border-radius: 30px;
+  text-decoration: none;
+  padding: 0.3em 0;
+}
+
+.nav-item:hover {
+  transition-duration: 0.4s;
+  background-color: #444444;
+}
+
+.choose-header {
+  font-size: 4em;
+  width: 100%;
+}
+
+.reset-state-btn {
+  position: absolute;
+}

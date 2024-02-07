@@ -1,0 +1,30 @@
+.shop-content {
+    width: 100%;
+}
+
+.searching {
+    width: 20%;
+    padding: 1em;
+    font-size: 2em;
+    margin: 3%;
+}
+
+.listed-products {
+    list-style: none;
+    flex-wrap: wrap;
+}
+
+.product {
+    margin: 1em;
+    padding: 1em;
+    border: 1px solid;
+}
+
+.product-name {
+    height: 10%;
+    text-transform: uppercase;
+}
+
+.product-type {
+    height: 6%;
+}

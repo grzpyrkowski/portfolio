@@ -1,0 +1,39 @@
+.board-content {
+    width: 100%;
+}
+
+.to-do-board {
+    margin: 3% 10%;
+}
+
+.task {
+    text-align: left;
+    border: 1px solid;
+    border-radius: 20px;
+    padding: 1% 2% 1% 10%;
+    margin: 0.7em;
+    transition: 0.2s;
+    font-size: 1.5em;
+}
+
+.task:hover {
+    box-shadow: 0 0 20px #f2f2f2;
+    background-color: #2a2a2a;
+    padding: 1% 1.5% 1% 9%;
+    font-size: 1.55em;
+    margin: 0.6em;
+}
+
+.task-details {
+    width: 80%;
+}
+
+.task-btns-container {
+    width: 20%;
+}
+
+.task-btn {
+    width: 45%;
+    cursor: pointer;
+    margin: 0 5%;
+}
