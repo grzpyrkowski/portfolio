@@ -11,7 +11,7 @@ It also connects with MySql and provides initial data to database.
 npm start \
 to download all libraries and start the app.
 2. Install and configure [MySql](https://dev.mysql.com/downloads/) on your pc.
-3. Open [db.js](scripts/db.js) file and use your credentials to configure connection with MySql database. \
+3. Open [connection.js](scripts/connection.js) file and use your credentials to configure connection with MySql database. \
     This is possible that you will have to grant permissions to your user, if so, run this query in **_MySql_**: \
     ALTER USER 'foo'@'localhost' IDENTIFIED WITH mysql_native_password BY 'bar';
 4. Run 
