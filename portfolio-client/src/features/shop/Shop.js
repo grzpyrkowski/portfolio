@@ -1,13 +1,16 @@
 import "./shop.css"
 import React from "react";
 import ListProducts from "./ListProducts";
+import {Link} from "react-router-dom";
 
-export default function Shop(props) {
+export default function Shop() {
         return (
-            <div className="shop-content flex">
-                <button className="btn-grad reset-state-btn" onClick={props.resetState}>Back to CV</button>
-                <ListProducts />
-            </div>
+            <>
+                <Link to="/" className="btn-grad reset-state-btn">Back to CV</Link>
+                <div className="shop-content flex">
+                    <ListProducts/>
+                </div>
+            </>
         )
 }
 

@@ -22,7 +22,7 @@ const Task = (props) => {
     }
 
     return (
-        <div className="task flex" id={"task-" + props.id}>
+        <>
             {isUpdateFormOpen && <UpdateTaskForm
                 id={props.id}
                 name={props.name}
@@ -30,27 +30,28 @@ const Task = (props) => {
                 requestStatus={props.requestStatus}
                 setRequestStatus={props.setRequestStatus}
             />}
-
-            <div className="task-details">
-                <p className="uppercase">{props.name}</p>
-                <p>{props.description}</p>
-                <p
-                    style={{color: isDelayed ? '#ff8080' : '#f2f2f2' }}
-                >{props.date}</p>
+            <div className="task flex" id={"task-" + props.id}>
+                <div className="task-details">
+                    <p className="uppercase">{props.name}</p>
+                    <p>{props.description}</p>
+                    <p
+                        style={{color: isDelayed ? '#ff8080' : '#f2f2f2' }}
+                    >{props.date}</p>
+                </div>
+                <div className="task-btns-container flex">
+                    <img className="task-btn"
+                        src={updateSvg}
+                        alt="update"
+                        onClick={() => dispatch(openModalUpdate())}
+                    />
+                    <img className="task-btn"
+                         alt="trash"
+                         src={deleteSvg}
+                         onClick={() => onDeleteClicked()}
+                    />
+                </div>
             </div>
-            <div className="task-btns-container flex">
-                <img className="task-btn"
-                    src={updateSvg}
-                    alt="update"
-                    onClick={() => dispatch(openModalUpdate())}
-                />
-                <img className="task-btn"
-                     alt="trash"
-                     src={deleteSvg}
-                     onClick={() => onDeleteClicked()}
-                />
-            </div>
-        </div>
+        </>
     )
 }
 

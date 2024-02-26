@@ -70,7 +70,7 @@
   background-color: #f2f2f2;
   color: #1f1f1f;
   font-size: 1.3em;
-  margin: 10% 25%;
+  margin: 5% 35%;
   padding: 1% 2%;
   border-radius: 10px;
 }
@@ -116,23 +116,24 @@ header, nav, main, footer {
 }
 
 header {
-  font-size: 1.8em;
+  font-size: 2.5em;
+}
+
+a {
+  color: #f2f2f2;
+  text-decoration: none;
 }
 
 .navbar {
-  font-size: 2.5em;
   font-weight: bold;
   list-style: none;
-}
-
-.navbar > div {
-  width: 33.33%;
 }
 
 .nav-item {
   border-radius: 30px;
   text-decoration: none;
   padding: 0.3em 0;
+  width: 33.33%;
 }
 
 .nav-item:hover {
@@ -147,4 +148,8 @@ header {
 
 .reset-state-btn {
   position: absolute;
+}
+
+.error-page {
+  margin-top: 10%;
 }
