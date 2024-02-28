@@ -1,25 +1,34 @@
-import React from "react";
+import React, {useEffect, useState} from "react";
 import { useParams } from "react-router-dom";
-import {useDispatch} from "react-redux";
+// import {useDispatch} from "react-redux";
 import {client, getTask} from "./toDoSlice";
 
 export default function TaskDetail() {
-    const dispatch = useDispatch;
-    
+    // const dispatch = useDispatch;
     const par = useParams();
-    console.log(par)
+    const [task, setTask] = useState(null);
 
-    React.useEffect(() => {
-        client.get(`${par.id}`)
-            .then(data => console.log(data))
+    useEffect(() => {
+        client.get(`/${par.id}`)
+            .then(data => setTask(data.data[0]))
     }, [par.id]);
-    
+
+
     // React.useEffect(() => {
     //     dispatch(getTask(par.id))
     // }, [dispatch, par.id]);
+    console.log(task)
 
     return (
-        <h1>eloo</h1>
+        <div>
+            { task ? (
+                <div>
+                    <h1>{task.name}</h1>
+                    <h1>{task.description}</h1>
+                    <h1>{task.date}</h1>
+                </div>
+        ) : <h1>Loading</h1> }
+        </div>
     )
 }
 

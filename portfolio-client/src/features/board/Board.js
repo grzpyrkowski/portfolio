@@ -23,7 +23,11 @@ export default function Board () {
     } else if (requestStatus === "success" || "idle") {
         renderedTasks = tasks.map(task =>
             <Link to={`/board/${task.id}`}>
-                <Task key={task.id} requestStatus={requestStatus} setRequestStatus={setRequestStatus} {...task} />
+                <Task
+                    key={task.id}
+                    // requestStatus={requestStatus}
+                    // setRequestStatus={setRequestStatus}
+                    {...task} />
             </Link>)
     } else if (requestStatus === "error")
         renderedTasks = <p>error</p>

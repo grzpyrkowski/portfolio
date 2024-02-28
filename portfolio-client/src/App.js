@@ -5,6 +5,7 @@ import UpdateTaskForm from "./features/board/UpdateTaskForm";
 import Shop from "./features/shop/Shop";
 import Game from "./features/game/Game";
 import Board from "./features/board/Board";
+import TestBoard from "./features/board/TestBoard";
 import {useSelector} from "react-redux";
 import CV from "./features/cv/CV";
 import {BrowserRouter, Link, Route, Routes} from "react-router-dom";
@@ -25,6 +26,7 @@ export default function App() {
                         <Link to="/shop" id="nav-shop-button" className="nav-item full-center">Shop</Link>
                         <Link to="/game" id="nav-memo-button" className="nav-item full-center">Memory Game</Link>
                         <Link to="/board" id="nav-todo-button" className="nav-item full-center">To-Do Board</Link>
+                        <Link to="/testboard" id="nav-todo-button" className="nav-item full-center">Testing To-Do Board</Link>
                     </nav>
                 </header>
                 <Routes>
@@ -32,7 +34,8 @@ export default function App() {
                     <Route path="/shop" element={<Shop/>}/>
                     <Route path="/game" element={<Game/>}/>
                     <Route path="/board" element={<Board/>}/>
-                    <Route path="/board/:id" element={<TaskDetail />}/>
+                    <Route path="/testboard" element={<TestBoard />}/>
+                    <Route path="/testboard/:id" element={<TaskDetail />}/>
                 </Routes>
                 <footer>
                     <p style={{padding: "0 1.5em"}}>
