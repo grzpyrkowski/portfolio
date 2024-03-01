@@ -1,6 +1,5 @@
 import {useState} from "react";
 import {useDispatch} from "react-redux";
-import Close from "../../data/board/close.svg"
 import {closeModalUpdate} from "./modalUpdateFormSlice";
 import {updateTask} from "./toDoSlice";
 
@@ -35,11 +34,6 @@ export default function UpdateTaskForm(props) {
     return (
         <aside className="modal">
             <form className="form" onSubmit={handleSubmit}>
-                <img className="close"
-                    alt="close"
-                    src={Close}
-                    onClick={() => {dispatch(closeModalUpdate())}}
-                />
                 <h2 className="uppercase">Update task</h2>
                 <label htmlFor="name">
                     <p>Task name: </p>

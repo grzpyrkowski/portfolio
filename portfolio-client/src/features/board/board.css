@@ -1,23 +1,33 @@
 .board-content {
     width: 100%;
+    align-items: center;
 }
 
 .task {
     text-align: left;
     border: 1px solid;
     border-radius: 20px;
-    padding: 1% 2% 1% 10%;
-    margin: 0.7em;
+    padding: 1% 2% 1% 5%;
+    margin: 1em auto;
     transition: 0.2s;
     font-size: 2em;
+    width: 50%;
 }
 
 .task:hover {
     box-shadow: 0 0 20px #f2f2f2;
     background-color: #2a2a2a;
-    padding: 1% 1.5% 1% 9%;
+    padding: 1% 3% 1% 6%;
     font-size: 2.1em;
-    margin: 0.6em;
+}
+
+.task-btn {
+    width: 100%;
+    transition: 0.2s;
+}
+
+.task:hover img {
+    width: 105%;
 }
 
 .task-details {
@@ -26,10 +36,4 @@
 
 .task-btns-container {
     width: 20%;
-}
-
-.task-btn {
-    width: 45%;
-    cursor: pointer;
-    margin: 0 5%;
 }

@@ -1,10 +1,9 @@
 import {useState} from "react";
 import {useDispatch} from "react-redux";
-import {closeModalAdd} from "./modalAddFormSlice";
-import Close from "../../data/board/close.svg"
 import {createTask} from "./toDoSlice";
+import {Link} from "react-router-dom";
 
-export default function AddTaskForm(props) {
+export default function AddTaskForm() {
     const dispatch = useDispatch();
     const [task, setTask] = useState({
         name: '',
@@ -17,7 +16,7 @@ export default function AddTaskForm(props) {
         setTask((prevState) => ({ ...prevState, [name]: value }));
     };
 
-    const canSave = [task.name, task.description, task.date].every(Boolean) && props.requestStatus === "idle";
+    const canSave = [task.name, task.description, task.date].every(Boolean);
 
     function handleSubmit(event) {
         event.preventDefault();
@@ -27,18 +26,11 @@ export default function AddTaskForm(props) {
             } 
             catch (err) { console.error(err) }
         }
-        dispatch(closeModalAdd());
-        props.setRequestStatus("idle")
     }
 
     return (
-        <aside className="modal">
+        <div>
             <form className="form" onSubmit={handleSubmit}>
-                <img className="close"
-                    alt="close"
-                    src={Close}
-                    onClick={() => {dispatch(closeModalAdd())}}
-                />
                 <h2 className="uppercase">New task</h2>
                 <label htmlFor="name">
                     <p>Task name: </p>
@@ -74,10 +66,14 @@ export default function AddTaskForm(props) {
                 <br/>
                 <br/>
                 <div>
-                    <button className="form-btn btn-grad" type="submit" disabled={!canSave}>Add task</button>
-                    <button className="form-btn btn-grad" style={{float: "right"}} onClick={() => {dispatch(closeModalAdd())}}>Cancel</button>
+                    <Link to="/testboard">
+                        <button className="form-btn btn-grad" type="submit" disabled={!canSave}>Add task</button>
+                    </Link>
+                    <Link to="/testboard">
+                        <button className="form-btn btn-grad" style={{float: "right"}}>Cancel</button>
+                    </Link>
                 </div>
             </form>
-        </aside>
+        </div>
     )
 }
