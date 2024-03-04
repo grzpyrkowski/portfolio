@@ -35,9 +35,9 @@ To see functionalities you need to start the [server](../portfolio-api/README.md
 ## Further progress
 
 Application is far from finished, same as my learning process. There are plenty of things needing improvement but at first I would like to focus on:
-- [ ] Fix CRUD
+- [x] Fix CRUD
+- [x] Routes with React Router
 - [ ] Add form validation
-- [ ] Routes with React Router
 - [ ] Better understand of Redux
 - [ ] CSS preprocessing
 - [ ] Implement CSS framework (surely Tailwind CSS)

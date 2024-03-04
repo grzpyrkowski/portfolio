@@ -1,7 +1,7 @@
 import {createAsyncThunk, createSlice} from "@reduxjs/toolkit";
 import axios from "axios";
 
-const client = axios.create({
+export const client = axios.create({
     baseURL: "http://localhost:4000/api/tasks"
 });
 
@@ -9,6 +9,12 @@ const initialState = {
     tasks: [],
     status: "idle"
 }
+
+export const getTask = createAsyncThunk('tasks/getTask', async(task) => {
+    const { id } = task;
+    const res = await client.get(`${id}`);
+    return [...res.data];
+})
 
 export const getAllTasks = createAsyncThunk('tasks/getAllTasks', async() => {
     const res = await client.get('');
@@ -44,6 +50,16 @@ const toDoSlice = createSlice({
     reducers: {},
     extraReducers(builder) {
         builder
+            .addCase(getTask.pending, (state) => {
+                state.status = "loading";
+            })
+            .addCase(getTask.fulfilled, (state, action) => {
+                state.status = "success";
+                return action.payload;
+            })
+            .addCase(getTask.rejected, (state) => {
+                state.status = "error";
+            })
             .addCase(getAllTasks.pending, (state) => {
                 state.status = "loading";
             })
@@ -64,11 +80,6 @@ const toDoSlice = createSlice({
             .addCase(createTask.fulfilled, (state, action) => {
                 state.status = "success";
                 try {
-                    const day = (state.tasks.date).getDate() + 1;
-                    const month = (state.tasks.date).getMonth();
-                    const year = (state.tasks.date).getFullYear();
-                    console.log(state.tasks.date)
-                    state.tasks.date = `${year}-${month}-${day}`
                     state.tasks.push(action.payload)
                 } catch (err) {console.error(err)}
             })
