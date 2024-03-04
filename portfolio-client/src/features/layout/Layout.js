@@ -11,11 +11,9 @@ export default function Layout() {
                     <Link to="/shop" id="nav-shop-button" className="nav-item full-center">Shop</Link>
                     <Link to="/game" id="nav-memo-button" className="nav-item full-center">Memory Game</Link>
                     <Link to="/board" id="nav-todo-button" className="nav-item full-center">To-Do Board</Link>
-                    <Link to="/testboard" id="nav-todo-button" className="nav-item full-center">Testing To-Do Board</Link>
                 </nav>
             </header>
             <main >
-                <Link to="/" className="btn-grad reset-state-btn">Back to CV</Link>
                 <Outlet />
             </main>
             <footer>

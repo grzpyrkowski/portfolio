@@ -1,10 +1,11 @@
 import {useState} from "react";
 import {useDispatch} from "react-redux";
 import {createTask} from "./toDoSlice";
-import {Link} from "react-router-dom";
+import {Link, useNavigate} from "react-router-dom";
 
 export default function AddTaskForm() {
     const dispatch = useDispatch();
+    let navigate = useNavigate();
     const [task, setTask] = useState({
         name: '',
         description: '',
@@ -24,7 +25,12 @@ export default function AddTaskForm() {
             try {
                 dispatch(createTask(task));
             } 
-            catch (err) { console.error(err) }
+            catch (err) {
+                console.error(err)
+            } finally {
+                navigate("/board")
+                navigate(0);
+            }
         }
     }
 
@@ -39,7 +45,6 @@ export default function AddTaskForm() {
                         id="name"
                         name="name"
                         value={task.name}
-                        // errorMessage="Tasks name should have 5-100 characters"
                         onChange={handleChange}
                     />
                 </label>
@@ -49,7 +54,6 @@ export default function AddTaskForm() {
                         id="description"
                         name="description"
                         value={task.description}
-                        // errorMessage="Tasks description should have 10-1000 characters"
                         onChange={handleChange}
                     />
                 </label>
@@ -66,10 +70,8 @@ export default function AddTaskForm() {
                 <br/>
                 <br/>
                 <div>
-                    <Link to="/testboard">
-                        <button className="form-btn btn-grad" type="submit" disabled={!canSave}>Add task</button>
-                    </Link>
-                    <Link to="/testboard">
+                    <button className="form-btn btn-grad" type="submit" disabled={!canSave}>Add task</button>
+                    <Link to="/board">
                         <button className="form-btn btn-grad" style={{float: "right"}}>Cancel</button>
                     </Link>
                 </div>

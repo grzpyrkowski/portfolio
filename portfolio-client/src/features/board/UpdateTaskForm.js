@@ -1,23 +1,32 @@
-import {useState} from "react";
+import {useEffect, useState} from "react";
 import {useDispatch} from "react-redux";
-import {closeModalUpdate} from "./modalUpdateFormSlice";
-import {updateTask} from "./toDoSlice";
+import {client, updateTask} from "./toDoSlice";
+import {Link, useNavigate, useParams} from "react-router-dom";
 
-export default function UpdateTaskForm(props) {
+export default function UpdateTaskForm() {
     const dispatch = useDispatch();
+    const par = useParams();
+    let navigate = useNavigate();
     const [task, setTask] = useState({
-        id: props.id,
-        name: props.name,
-        description: props.description,
+        name: '',
+        description: '',
         date: ''
     })
+
+    useEffect(() => {
+        client.get(`/${par.id}`)
+            .then(data => {
+                data.data[0].date = data.data[0].date.slice(0,10);
+                setTask(data.data[0]);
+            })
+    }, [par.id]);
 
     const handleChange = (event) => {
         const { name, value } = event.target;
         setTask((prevState) => ({ ...prevState, [name]: value }));
     };
 
-    const canSave = [task.name, task.description, task.date].every(Boolean) && props.requestStatus === "idle";
+    const canSave = [task.name, task.description, task.date].every(Boolean);
 
     function handleSubmit(event) {
         event.preventDefault();
@@ -25,14 +34,17 @@ export default function UpdateTaskForm(props) {
             try {
                 dispatch(updateTask(task));
             } 
-            catch (err) {console.error(err)}
+            catch (err) {
+                console.error(err)
+            } finally {
+                navigate(`/board/${par.id}`)
+                navigate(0);
+            }
         }
-        dispatch(closeModalUpdate());
-        props.setRequestStatus("idle")
     }
 
     return (
-        <aside className="modal">
+        <div>
             <form className="form" onSubmit={handleSubmit}>
                 <h2 className="uppercase">Update task</h2>
                 <label htmlFor="name">
@@ -42,7 +54,6 @@ export default function UpdateTaskForm(props) {
                         id="name"
                         name="name"
                         value={task.name}
-                        // errorMessage="Tasks name should have 5-100 characters"
                         onChange={handleChange}
                     />
                 </label>
@@ -52,7 +63,6 @@ export default function UpdateTaskForm(props) {
                         id="description"
                         name="description"
                         value={task.description}
-                        // errorMessage="Tasks description should have 10-500 characters"
                         onChange={handleChange}
                     />
                 </label>
@@ -69,10 +79,12 @@ export default function UpdateTaskForm(props) {
                 <br/>
                 <br/>
                 <div>
-                    <button className="form-btn btn-grad" type="submit" disabled={!canSave}>Update task</button>
-                    <button className="form-btn btn-grad" style={{float: "right"}} onClick={() => {dispatch(closeModalUpdate())}}>Cancel</button>
+                    <button className="form-btn btn-grad" type="submit" disabled={!canSave}>Update</button>
+                    <Link to={`/board/${par.id}`}>
+                        <button className="form-btn btn-grad" style={{float: "right"}}>Cancel</button>
+                    </Link>
                 </div>
             </form>
-        </aside>
+        </div>
     )
 }

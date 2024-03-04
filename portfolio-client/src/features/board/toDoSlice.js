@@ -80,11 +80,6 @@ const toDoSlice = createSlice({
             .addCase(createTask.fulfilled, (state, action) => {
                 state.status = "success";
                 try {
-                    const day = (state.tasks.date).getDate() + 1;
-                    const month = (state.tasks.date).getMonth();
-                    const year = (state.tasks.date).getFullYear();
-                    console.log(state.tasks.date)
-                    state.tasks.date = `${year}-${month}-${day}`
                     state.tasks.push(action.payload)
                 } catch (err) {console.error(err)}
             })
