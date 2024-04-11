@@ -2,13 +2,12 @@ import './board.css';
 import React, {useEffect} from "react";
 import {getAllTasks, selectAllTasks} from "./toDoSlice";
 import {useDispatch, useSelector} from "react-redux";
-import {Link, useNavigate} from "react-router-dom";
+import {Link} from "react-router-dom";
 import arrowSvg from "../../data/board/arrow.svg"
 
 export default function Board() {
     const dispatch = useDispatch();
     const tasks = useSelector(selectAllTasks);
-    const navigate = useNavigate();
 
     useEffect(() => {
         if (tasks.length === 0) {
@@ -31,7 +30,7 @@ export default function Board() {
 
     return (
         <>
-            <Link to="/" className="btn-grad reset-state-btn">Back to CV</Link>
+            <Link to="/" className="btn-grad reset-state-btn">Back to Main Page</Link>
             <div className="hor-center board-content">
                 <Link to="/board/new-task">
                       <button className="btn-grad add-task-btn">

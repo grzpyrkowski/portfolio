@@ -6,7 +6,7 @@ import {Link} from "react-router-dom";
 export default function Game() {
     return (
         <>
-            <Link to="/" className="btn-grad reset-state-btn">Back to CV</Link>
+            <Link to="/" className="btn-grad reset-state-btn">Back to Main Page</Link>
             <div className="game-content">
                 <div className="instruction">
                     <p>

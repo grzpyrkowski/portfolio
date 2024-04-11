@@ -1,49 +1,7 @@
 .cv-content {
     display: block;
-    width: 60%;
+    width: 100%;
     margin: 3em auto;
-}
-
-.cv-content > section {
-    align-content: center;
-    align-items: center;
-}
-
-section > div {
-    flex-wrap: wrap;
-}
-
-section {
-    font-size: 1.25em;
-}
-
-.section-content {
-    margin: 0 1em;
-    padding: 0 0.5em;
-    border-left: solid 1px;
-}
-
-.cv-skill {
-    font-size: 1.5em;
-    width: 12em;
-    height: 2em;
-}
-
-.cv-item-title {
-    font-size: 1.4em;
-}
-
-hr {
-    margin: 2em 0;
-}
-
-#personalities > img {
-    position: absolute;
-    right: 20.5%;
-    height: 12.5em;
-}
-
-.skill-dot {
-    font-size: 1.25em;
-    padding-top: 2em;
+    font-size: 2rem;
+    text-align: center;
 }

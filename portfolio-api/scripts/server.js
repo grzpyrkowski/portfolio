@@ -12,7 +12,7 @@ const app = express();
 //middleware
 app.use(bodyParser.json())
 app.options('*', cors()); //pre-flight
-app.use(corsMiddleware)
+app.use(corsMiddleware);
 app.use('/api/tasks', tasksRoutes);
 app.use(express.static('public'));
 
