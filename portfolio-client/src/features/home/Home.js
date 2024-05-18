@@ -1,7 +1,7 @@
-import "./cv.css"
+import "./home.css"
 import React from "react";
 
-export default function CV() {
+export default function Home() {
     return (
         <div className="cv-content">
             <h1>Choose any app from the navbar</h1>

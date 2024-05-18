@@ -4,7 +4,7 @@ import AddTaskForm from "./features/board/AddTaskForm";
 import Shop from "./features/shop/Shop";
 import Game from "./features/game/Game";
 import Board from "./features/board/Board";
-import CV from "./features/cv/CV";
+import Home from "./features/home/Home";
 import TaskDetail from "./features/board/TaskDetail";
 import Layout from "./features/layout/Layout";
 import UpdateTaskForm from "./features/board/UpdateTaskForm";
@@ -21,7 +21,7 @@ export default function App() {
     const router = createBrowserRouter(
         createRoutesFromElements(
             <Route element={<Layout />} errorElement={<ErrorPage />}>
-                <Route path="/" element={<CV />} />
+                <Route path="/" element={<Home />} />
                 <Route path="/shop" element={<Shop/>}/>
                 <Route path="/game" element={<Game/>}/>
                 <Route path="/board" element={<Board />}/>
