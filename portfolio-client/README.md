@@ -14,10 +14,6 @@ to download all libraries and start the app.
 
 Every next tab, starting from landing page, is a bit more complex. It kinda shows my learning process.
 
-### CV
-
-Portfolios landing page is my CV.
-
 ### Shop
 
 Shop tab contains fetched products with option of filtering them.
