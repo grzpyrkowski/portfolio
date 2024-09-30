@@ -27,15 +27,3 @@ Game tab contains simple memo game.
 Last tab, the most complex one, contains to-do board with all CRUD operations. \
 Those are implemented in the use of redux, async thunk and axios. \
 To see functionalities you need to start the [server](../portfolio-api/README.md).
-
-## Further progress
-
-Application is far from finished, same as my learning process. There are plenty of things needing improvement but at first I would like to focus on:
-- [x] Fix CRUD
-- [x] Routes with React Router
-- [ ] Add form validation
-- [ ] Better understand of Redux
-- [ ] CSS preprocessing
-- [ ] Implement CSS framework (surely Tailwind CSS)
-- [ ] Make it responsive
-- [ ] Testing (Jest, Cypress, React Testing Library)
