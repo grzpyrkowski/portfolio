@@ -1,7 +1,5 @@
 # Portfolio - client-side
 
----
-
 ## Open the App in web browser
 
 Open terminal and type \
