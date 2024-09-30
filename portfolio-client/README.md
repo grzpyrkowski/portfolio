@@ -1,7 +1,5 @@
 # Portfolio - client-side
 
-This part of [portfolio](https://github.com/grzpyrkowski/portfolio-test) is User Interface of application.
-
 ---
 
 ## Open the App in web browser
