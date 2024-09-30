@@ -1,5 +1,9 @@
 # Portfolio - client-side
 
+This part of [portfolio](https://github.com/grzpyrkowski/portfolio) is User Interface of application.
+
+---
+
 ## Open the App in web browser
 
 Open terminal and type \
