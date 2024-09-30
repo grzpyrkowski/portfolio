@@ -28,10 +28,3 @@ to download all libraries and start the app.
 When server is running, content is displayed in application in Board tab. \
 There is also a possibility to perform CRUD operations. \
 If you need a help in running the app, check [README](../portfolio-client/README.md) in portfolio-client directory.
-
-## Further progress
-
-Application is far from finished, same as my learning process. There are plenty of things needing improvement but at first I would like to focus on:
-- [ ] Change MySql to MongoDB
-- [ ] Better knowledge of node.js
-- [ ] Better knowledge of express.js
