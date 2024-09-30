@@ -1,6 +1,6 @@
 # Portfolio - server-side
 
-This part of [portfolio](https://github.com/grzpyrkowski/portfolio-test) is express.js/node.js backend of application. \
+This part of [portfolio](https://github.com/grzpyrkowski/portfolio) is backend of an application. \
 It also connects with MySql and provides initial data to database.
 
 ---
